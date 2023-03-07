@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CounterBloc counterBloc=BlocProvider.of<CounterBloc>(context);
+    CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bloc Counter App'),
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                counterBloc.add(CounterEvents.remove);
+                counterBloc.add(CounterDecrementPressed());
               },
               icon: const Icon(
                 Icons.remove,
@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             }),
             IconButton(
               onPressed: () {
-                counterBloc.add(CounterEvents.add);
+                counterBloc.add(CounterIncrementPressed());
               },
               icon: const Icon(
                 Icons.add,
