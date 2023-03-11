@@ -38,6 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   bloc: ^8.1.1
   flutter_bloc: ^8.1.2
+  wave: ^0.2.2
+  equatable: ^2.0.5
+  flutter_screenutil: ^5.6.1
+  flutter_html: ^2.2.1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
