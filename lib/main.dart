@@ -1,5 +1,6 @@
-import 'package:bloc_pattarn/counter_app/counter_bloc/bloc.dart';
-import 'package:bloc_pattarn/counter_app/home.dart';
+import 'package:bloc_pattarn/timer_app/bloc/bloc.dart';
+import 'package:bloc_pattarn/timer_app/components/home.dart';
+import 'package:bloc_pattarn/timer_app/tacker/tacker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,13 +16,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Timer',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: const Color.fromRGBO(109, 234, 255, 1),
+        colorScheme: const ColorScheme.light(
+          secondary: Color.fromRGBO(72, 74, 126, 1),
+        ),
       ),
-      home:  BlocProvider<CounterBloc>(
-        create: (context) => CounterBloc(),
-        child: const HomeScreen(),
+      home: BlocProvider<TimerBloc>(
+        create: (context) => TimerBloc(ticker: Ticker()),
+        child: const HomeTimer(),
       ),
     );
   }
