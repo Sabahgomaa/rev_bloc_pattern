@@ -16,15 +16,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Timer',
+      title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: const Color.fromRGBO(109, 234, 255, 1),
         colorScheme: const ColorScheme.light(
           secondary: Color.fromRGBO(72, 74, 126, 1),
-        ),
-      ),
+        ),      ),
       home: BlocProvider<TimerBloc>(
-        create: (context) => TimerBloc(ticker: Ticker()),
+        create: (context) => TimerBloc(ticker: const Ticker()),
         child: const HomeTimer(),
       ),
     );
